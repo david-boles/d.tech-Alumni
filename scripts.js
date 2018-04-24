@@ -1,2 +1,4 @@
 //alert("sometext");
-document.getElementById('paragraph').innerText="somenewtext";
+setTimeout(function(){
+  document.getElementById('paragraph').innerText="somenewtext";
+},5000);

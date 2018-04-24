@@ -11,7 +11,7 @@ function getData(callback) {
   xmlHttp.onreadystatechange = function() { 
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
       try {
-        onSuccess(JSON.parse(xmlHttp.responseText));
+        callback(JSON.parse(xmlHttp.responseText));
       }catch(e) {
         console.error("Parse failed: ", xmlHttp, e);
       }

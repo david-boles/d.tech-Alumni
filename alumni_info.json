@@ -1,1 +1,19 @@
 
+[
+  {
+    "name": "David Boles",
+    "school": "Brown",
+    "location": {
+      "lat": 41.8270796,
+      "lng": -71.4045813
+    }
+  },
+  {
+    "name": "Milo Aronica",
+    "school": "Bucknell",
+    "location": {
+      "lat": 40.9546909,
+      "lng": -76.8857454
+    }
+  }
+]

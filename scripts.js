@@ -19,6 +19,6 @@ function getData(onSuccess, onGetFail, onParseFail) {
       onGetFail(xmlHttp);
     }
   }
-  xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+  xmlHttp.open("GET", "https://raw.githubusercontent.com/david476/d.tech-Alumni/master/alumni_info.json", true); // true for asynchronous 
   xmlHttp.send(null);
 }

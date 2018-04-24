@@ -5,18 +5,16 @@ setTimeout(function(){
   document.getElementById('paragraph').innerText="somenewtext";
 },5000);
 
-//Attempt to retrieve and parse the database from GitHub. Arguments are functions that get passed the parsed JSON, the XMLHttpRequest, or the XMLHttpRequest and the error respectively.
-function getData(onSuccess, onGetFail, onParseFail) {
+//Attempt to retrieve and parse the database from GitHub. Argument is a callback function that gets passed the parsed JSON (an array).
+function getData(callback) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function() { 
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
       try {
         onSuccess(JSON.parse(xmlHttp.responseText));
       }catch(e) {
-        onParseFail(xmlHttp, e);
+        console.error("Parse failed: ", xmlHttp, e);
       }
-    }else {
-      onGetFail(xmlHttp);
     }
   }
   xmlHttp.open("GET", "https://raw.githubusercontent.com/david476/d.tech-Alumni/master/alumni_info.json", true); // true for asynchronous 

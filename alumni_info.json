@@ -1,19 +1,28 @@
-
 [
   {
-    "name": "David Boles",
-    "school": "Brown",
+    "name": "Brown University",
     "location": {
       "lat": 41.8270796,
       "lng": -71.4045813
-    }
+    },
+    "alumni": [
+      {
+        "name": "David Boles"
+        "year": "2018"
+      }
+    ]
   },
   {
-    "name": "Milo Aronica",
-    "school": "Bucknell",
+    "name": "Bucknell University",
     "location": {
       "lat": 40.9546909,
       "lng": -76.8857454
-    }
+    },
+    "alumni": [
+      {
+        "name": "Milo Aronica"
+        "year": "2018"
+      }
+    ]
   }
 ]

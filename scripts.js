@@ -1,2 +1,2 @@
 alert("sometext");
-document.getElementByID('paragraph')
+document.getElementByID('paragraph').innerText="somenewtext";

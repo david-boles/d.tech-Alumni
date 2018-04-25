@@ -8,12 +8,16 @@ setTimeout(function(){
 
 function initMap() {
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+   var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: {lat: 37.533034, lng: -122.264452}
         });
+   var BrownUniversity = {
+      "lat": 41.8270796,
+      "lng": -71.4045813
+    }
    var marker = new google.maps.Marker({
-          position: uluru,
+          position: BrownUniversity,
           map: map
         });
 }

@@ -5,6 +5,16 @@ setTimeout(function(){
   document.getElementById('paragraph').innerText="somenewtext";
 },5000);
 
+
+function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+}
+ 
+
 //Attempt to retrieve and parse the database from GitHub. Argument is a callback function that gets passed the parsed JSON (an array).
 function getData(callback) {
   var xmlHttp = new XMLHttpRequest();

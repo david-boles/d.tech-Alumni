@@ -19,13 +19,14 @@ function initMap() {
             //position: location,
             //label: labels[i % labels.length]
      var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            });
      //var locations = 
    
      var BrownUniversity = {
       "lat": 41.8270796,
       "lng": -71.4045813
-        }
+        };
      var marker = new google.maps.Marker({
           position: BrownUniversity,
           label: "BU",

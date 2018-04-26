@@ -7,7 +7,6 @@ setTimeout(function(){
 
 
 function initMap() {
-
    getData(function(Data){
      var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
@@ -26,7 +25,7 @@ function initMap() {
      var BrownUniversity = {
       "lat": 41.8270796,
       "lng": -71.4045813
-    }
+        }
      var marker = new google.maps.Marker({
           position: BrownUniversity,
           label: "BU",

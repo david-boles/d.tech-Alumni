@@ -7,6 +7,7 @@ setTimeout(function(){
 
 
 function initMap() {
+  
    getData(function(Data){
      var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
@@ -32,6 +33,7 @@ function initMap() {
           label: "BU",
           map: map
         });
+     
 }
  
 

@@ -8,25 +8,26 @@ setTimeout(function(){
 
 function initMap() {
 
-   var map = new google.maps.Map(document.getElementById('map'), {
+   getData(function(Data){
+     var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: {lat: 37.533034, lng: -122.264452}
         });
   
-   //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+     //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         //var markers = locations.map(function(location, i) {
           //return new google.maps.Marker({
             //position: location,
             //label: labels[i % labels.length]
-   var markerCluster = new MarkerClusterer(map, markers,
+     var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-   //var locations = 
+     //var locations = 
    
-   var BrownUniversity = {
+     var BrownUniversity = {
       "lat": 41.8270796,
       "lng": -71.4045813
     }
-   var marker = new google.maps.Marker({
+     var marker = new google.maps.Marker({
           position: BrownUniversity,
           label: "BU",
           map: map

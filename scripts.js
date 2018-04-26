@@ -12,14 +12,15 @@ function initMap() {
           zoom: 13,
           center: {lat: 37.533034, lng: -122.264452}
         });
-   var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
+  
+   //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        //var markers = locations.map(function(location, i) {
+          //return new google.maps.Marker({
             position: location,
             label: labels[i % labels.length]
-   var markerCluster = new MarkerClusterer(map, markers,
+   //var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-   var locations = 
+   //var locations = 
    
    var BrownUniversity = {
       "lat": 41.8270796,

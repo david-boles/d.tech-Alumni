@@ -23,7 +23,7 @@ function initMap() {
     position: BrownUniversity
   });
   marker.addListener("click",function(){
-    InfoWindow.open();
+    infoWindow.open();
   });
   
 }

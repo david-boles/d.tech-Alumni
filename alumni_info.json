@@ -22,11 +22,19 @@
       {
         "name": "Milo Aronica",
         "year": "18"
-      },
+      }
+    ]
+  }
+  {
+    "name": "Lehigh University",
+    "location": {
+      "lat": 40.6069181,
+      "lng": -75.3809005
+    },
+    "alumni": [
       {
         "name": "Michael Bentley",
-        "year": "17"
-      }
+        "year": "18"
     ]
   }
 ]

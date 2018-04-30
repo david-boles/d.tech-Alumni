@@ -16,12 +16,12 @@ function initMap() {
         //label: "BU",
         map: map
       });
-      var infoWindow = new google.maps.InfoWindow({
-        content: data [i].name,
-        position: data [i].location
-      });
+      
       marker.addListener("click",function(){ 
-        infoWindow.open(map,marker);
+          new google.maps.InfoWindow({
+          content: data [i].name,
+          position: data [i].location
+        }).open(map,marker);
       }); 
     }
   });

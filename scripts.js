@@ -54,6 +54,6 @@ function getData(callback) {
       }
     }
   }
-  xmlHttp.open("GET", "https://raw.githubusercontent.com/david476/d.tech-Alumni/master/alumni_info.json", true); // true for asynchronous 
+  xmlHttp.open("GET", "/alumni_info.json", true); // true for asynchronous 
   xmlHttp.send(null);
 }

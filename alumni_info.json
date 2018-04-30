@@ -44,7 +44,7 @@
       "lat": 42.2745793,
       "lng": -71.8084664
     },
-    "alumni": {
+    "alumni": [
       {
         "name": "Nick Dal Porto",
         "year": "18"
@@ -61,6 +61,6 @@
         "name": "Jacob Fisher",
         "year": "18"
       }
-    }
+    ]
   }
 ]

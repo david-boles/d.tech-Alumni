@@ -2,32 +2,32 @@
 
 function initMap() {
   
-   //getData(function(Data){
-     var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: {lat: 37.533034, lng: -122.264452}
-     });
+  //getData(function(Data){
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 37.533034, lng: -122.264452}
+  });
   
-     //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        //var markers = locations.map(function(location, i) {
-          //return new google.maps.Marker({
-            //position: location,
-            //label: labels[i % labels.length]
-
-     //var locations = 
-   
-     var BrownUniversity = {
-      "lat": 41.8270796,
-      "lng": -71.4045813
-        };
-     var marker = new google.maps.Marker({
-          position: BrownUniversity,
-          label: "BU",
-          map: map
-        });
-     
+  //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  //var markers = locations.map(function(location, i) {
+  //return new google.maps.Marker({
+  //position: location,
+  //label: labels[i % labels.length]
+  
+  //var locations = 
+  
+  var BrownUniversity = {
+    "lat": 41.8270796,
+    "lng": -71.4045813
+  };
+  var marker = new google.maps.Marker({
+    position: BrownUniversity,
+    label: "BU",
+    map: map
+  });
+  
 }
- 
+
 
 //Attempt to retrieve and parse the database from GitHub. Argument is a callback function that gets passed the parsed JSON (an array).
 function getData(callback) {

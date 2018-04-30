@@ -28,7 +28,7 @@ function addInfoWindow(marker, place) {
   var text = place.name;
   for(var i in place.alumni) {
     var alumn = place.alumni[i];
-    text += '\n- ' + alumn.name + ' \'' + alumn.year;
+    text += '<br>- ' + alumn.name + ' \'' + alumn.year;
   }
 
   var infoWindow = new google.maps.InfoWindow({

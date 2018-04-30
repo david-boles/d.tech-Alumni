@@ -1,11 +1,5 @@
 //TODO Implement maps: https://developers.google.com/maps/documentation/javascript/marker-clustering
 
-//alert("sometext");
-setTimeout(function(){
-  document.getElementById('paragraph').innerText="somenewtext";
-},5000);
-
-
 function initMap() {
   
    //getData(function(Data){

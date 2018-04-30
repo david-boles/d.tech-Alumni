@@ -17,16 +17,20 @@ function initMap() {
         map: map
       });
       
-      marker.addListener("click",function(){ 
-        new google.maps.InfoWindow({
-          content: data [i].name,
-          position: data [i].location
-        }).open(map,this);
-      }.bind(marker)); 
+      addInfoWindow(marker, data[i])
     }
   });
- 
+}
+
+function addInfoWindow(marker, place) {
+  var infoWindow = new google.maps.InfoWindow({
+    content: place.name,
+    position: place.location
+  });
   
+  marker.addListener("click",function(){ 
+    infoWindow.open(map,marker);
+  }); 
 }
 
 

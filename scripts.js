@@ -17,7 +17,7 @@ function initMap() {
         map: map
       });
       
-      addInfoWindow(marker, data[i])
+      addInfoWindow(marker, data[i]);
     }
   });
 }
@@ -29,7 +29,7 @@ function addInfoWindow(marker, place) {
   });
   
   marker.addListener("click",function(){ 
-    infoWindow.open(map,marker);
+    infoWindow.open(map, marker);
   }); 
 }
 

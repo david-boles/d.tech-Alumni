@@ -12,13 +12,13 @@ function initMap() {
   getData(function(data){
     for(var i in data){
       var marker = new google.maps.Marker({
-       position: data [i].location,
+        position: data [i].location,
         //label: "BU",
         map: map
       });
       
       marker.addListener("click",function(){ 
-          new google.maps.InfoWindow({
+        new google.maps.InfoWindow({
           content: data [i].name,
           position: data [i].location
         }).open(map,marker);

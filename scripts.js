@@ -11,18 +11,26 @@ function initMap() {
   
   getData(function(data){
     for(var i in data){
+      var place = data[i];
+
       var marker = new google.maps.Marker({
-        position: data [i].location,
+        position: place.location,
         //label: "BU",
         map: map
       });
       
-      addInfoWindow(marker, data[i]);
+      addInfoWindow(marker, place);
     }
   });
 }
 
 function addInfoWindow(marker, place) {
+  var text = place.location;
+  for(var i in place.alumni) {
+    var alumn = place.alumni[i];
+    text += '\n- ' + alumn.name + ' \'' + alumn.year
+  }
+
   var infoWindow = new google.maps.InfoWindow({
     content: place.name,
     position: place.location

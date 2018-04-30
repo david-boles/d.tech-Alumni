@@ -46,11 +46,7 @@
     },
     "alumni": [
       {
-        "name": "Nick Dal Porto",
-        "year": "18"
-      },
-      {
-        "name": "Nick Hom",
+        "name": "Jacob Fisher",
         "year": "18"
       },
       {
@@ -58,7 +54,11 @@
         "year": "18"
       },
       {
-        "name": "Jacob Fisher",
+        "name": "Nick Dal Porto",
+        "year": "18"
+      },
+      {
+        "name": "Nick Hom",
         "year": "18"
       }
     ]

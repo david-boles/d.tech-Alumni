@@ -9,22 +9,23 @@ function initMap() {
   });
   
   
-  var BrownUniversity = {
-    "lat": 41.8270796,
-    "lng": -71.4045813
-  };
-  var marker = new google.maps.Marker({
-    position: BrownUniversity,
-    //label: "BU",
-    map: map
+  getData(function(data){
+    for(var i in data){
+      var marker = new google.maps.Marker({
+       position: data [i].location,
+        //label: "BU",
+        map: map
+      });
+      var infoWindow = new google.maps.InfoWindow({
+        content: data [i].name,
+        position: data [i].location
+      });
+      marker.addListener("click",function(){ 
+        infoWindow.open(map,marker);
+      }); 
+    }
   });
-  var infoWindow = new google.maps.InfoWindow({
-    content:"whatever",
-    position: BrownUniversity
-  });
-  marker.addListener("click",function(){ 
-    infoWindow.open(map,marker);
-  });
+ 
   
 }
 

@@ -24,7 +24,7 @@ function initMap() {
   });
   marker.addListener("click",function(){
     alert("quotes"); 
-    infoWindow.open();
+    infoWindow.open(map);
   });
   
 }

@@ -22,7 +22,7 @@ function initMap() {
           content: data [i].name,
           position: data [i].location
         }).open(map,this);
-      }).bind(marker); 
+      }.bind(marker)); 
     }
   });
  

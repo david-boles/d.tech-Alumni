@@ -21,8 +21,8 @@ function initMap() {
         new google.maps.InfoWindow({
           content: data [i].name,
           position: data [i].location
-        }).open(map,marker);
-      }); 
+        }).open(map,this);
+      }).bind(marker); 
     }
   });
  

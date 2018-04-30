@@ -37,5 +37,30 @@
         "year": "18"
       }
     ]
+  },
+  {
+    "name": "Worcester",
+    "location": {
+      "lat": 42.2745793,
+      "lng": -71.8084664
+    },
+    "alumni": {
+      {
+        "name": "Nick Dal Porto",
+        "year": "18"
+      },
+      {
+        "name": "Nick Hom"
+        "year": "18"
+      },
+      {
+        "name": "Johnathan Ferriera",
+        "year": "18"
+      },
+      {
+        "name": "Jacob Fisher",
+        "year": "18"
+      }
+    }
   }
 ]

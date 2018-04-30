@@ -18,6 +18,10 @@ function initMap() {
     //label: "BU",
     map: map
   });
+  var infoWindow = new google.maps.InfoWindow({
+    content:"whatever",
+    position: BrownUniversity
+  });
   
 }
 

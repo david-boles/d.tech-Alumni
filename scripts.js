@@ -22,7 +22,7 @@ function initMap() {
   };
   var marker = new google.maps.Marker({
     position: BrownUniversity,
-    label: "BU",
+    //label: "BU",
     map: map
   });
   

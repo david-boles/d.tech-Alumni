@@ -23,6 +23,7 @@ function initMap() {
 	});
 }
 
+var infoWindows = [];
 function addInfoWindow(marker, place) {
 	var text = place.name;
 	for (var i in place.alumni) {
@@ -34,8 +35,13 @@ function addInfoWindow(marker, place) {
 		content: text,
 		position: place.location
 	});
+	
+	infoWindows.push(infoWindow);
 
 	marker.addListener("click", function () {
+		for(var i in infoWindows) {
+			infoWindows[i].close();
+		}
 		infoWindow.open(map, marker);
 	});
 }

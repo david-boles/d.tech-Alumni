@@ -40,9 +40,10 @@ function addInfoWindow(marker, place) {
 	});
 }
 
-const lastNameColumnIndex = 2;
-const firstNameColumnIndex = 1;
-const yearColumnIndex = 3;
+const firstNameColumnIndex = 2;
+const lastNameColumnIndex = 3;
+const yearColumnIndex = 4;
+const locationColumnIndex = 5;
 
 
 function interpretCollegeArray(spreadsheetArrayData, callback) {
@@ -56,7 +57,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 	spreadsheetArrayData.forEach(function (row, i) {
 		row.shift();
 
-		const currentCollegeName = row[3];
+		const currentCollegeName = row[locationColumnIndex];
 
 		var collegeAlreadyAdded = false;
 		colleges.forEach(function (college, i) {

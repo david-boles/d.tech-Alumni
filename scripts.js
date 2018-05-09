@@ -106,7 +106,7 @@ function getData(callback) {
 			}
 		}
 	};
-	xmlHttp.open("GET", "https://docs.google.com/spreadsheets/d/17JwQ4jN0-ll63knfSEsjUkb1cqiBG3PEupICDDMtpeQ/export?format=csv", true); // true for asynchronous
+	xmlHttp.open("GET", "https://docs.google.com/spreadsheets/d/1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU/export?format=csv", true); // true for asynchronous
 	xmlHttp.send(null);
 }
 

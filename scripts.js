@@ -27,7 +27,7 @@ function addInfoWindow(marker, place) {
 	var text = place.name;
 	for (var i in place.alumni) {
 		var alumn = place.alumni[i];
-		text += '<br>- ' + alumn.name + ' \'' + alumn.year;
+		text += '<br>- ' + alumn.name + ' \'' + alumn.year (alumn.email? ' (' + alumn.email + ')' : '');
 	}
 
 	var infoWindow = new google.maps.InfoWindow({
@@ -44,6 +44,7 @@ const firstNameColumnIndex = 1;
 const lastNameColumnIndex = 2;
 const yearColumnIndex = 3;
 const locationColumnIndex = 4;
+const emailColumnIndex = 5;
 
 
 function interpretCollegeArray(spreadsheetArrayData, callback) {
@@ -65,7 +66,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 			if (college.name === currentCollegeName && !collegeAlreadyAdded) {
 				collegeAlreadyAdded = true;
 
-				colleges[i].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex]});
+				colleges[i].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
 				callback(colleges);
 			}
 		});
@@ -81,7 +82,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 					"lng": results[0].geometry.location.lng()
 				};
 
-				colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex]});
+				colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
 
 				callback(colleges);
 			});

@@ -57,6 +57,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 	spreadsheetArrayData.forEach(function (row, i) {
 		row.shift();
 
+		console.log(row);
 		const currentCollegeName = row[locationColumnIndex];
 
 		var collegeAlreadyAdded = false;

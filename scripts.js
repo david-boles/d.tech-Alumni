@@ -40,9 +40,9 @@ function addInfoWindow(marker, place) {
 	});
 }
 
-const lastNameColumnIndex = 1;
-const firstNameColumnIndex = 0;
-const yearColumnIndex = 2;
+const lastNameColumnIndex = 2;
+const firstNameColumnIndex = 1;
+const yearColumnIndex = 3;
 
 
 function interpretCollegeArray(spreadsheetArrayData, callback) {

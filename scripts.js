@@ -69,7 +69,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 				collegeAlreadyAdded = true;
 
 				colleges[i].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
-				setTimeout(()=>{callback(colleges)}, 100);
+				callback(colleges);
 			}
 		});
 		if (!collegeAlreadyAdded) {
@@ -89,7 +89,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 				}catch(e) {
 					console.error(newCollegeIndex, currentCollegeName, e);
 				}
-				setTimeout(()=>{callback(colleges)}, 100);
+				callback(colleges);
 			});
 		}
 	});

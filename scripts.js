@@ -48,6 +48,8 @@ const lastNameColumnIndex = 2;
 const yearColumnIndex = 3;
 const locationColumnIndex = 4;
 const emailColumnIndex = 5;
+const latColumnIndex = 6;
+const lngColumnIndex = 7;
 
 
 function interpretCollegeArray(spreadsheetArrayData, callback) {
@@ -72,25 +74,22 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 				callback(colleges);
 			}
 		});
-		if (!collegeAlreadyAdded) {
+		if (!collegeAlreadyAdded && row[latColumnIndex] && row[lngColumnIndex]) {
 			const newCollege = {
 				name: currentCollegeName,
 				alumni: []
 			};
 			const newCollegeIndex = colleges.push(newCollege) - 1;
-			geocoder.geocode({'address': currentCollegeName}, function (results, status) {
-				try {
-					newCollege.location = {
-						"lat": results[0].geometry.location.lat(),
-						"lng": results[0].geometry.location.lng()
-					};
+				
+			newCollege.location = {
+				"lat": row[latColumnIndex],
+				"lng": row[lngColumnIndex]
+			};
 
-					colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
-				}catch(e) {
-					console.error(newCollegeIndex, currentCollegeName, e);
-				}
-				callback(colleges);
-			});
+			colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
+			callback(colleges);
+		}else {
+			callback(colleges);
 		}
 	});
 }

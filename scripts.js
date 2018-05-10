@@ -83,6 +83,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 			};
 			const newCollegeIndex = colleges.push(newCollege) - 1;
 			geocoder.geocode({'address': currentCollegeName}, function (results, status) {
+				console.log(currentCollegeName);
 				newCollege.location = {
 					"lat": results[0].geometry.location.lat(),
 					"lng": results[0].geometry.location.lng()

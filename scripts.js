@@ -13,7 +13,7 @@ function initMap() {
 			var marker = new google.maps.Marker({
 				position: college.location,
 				map: map,
-				label: String(college.alumni.length)
+				//label: String(college.alumni.length)//Shows the number of alumni in that location
 			});
 
 			addInfoWindow(marker, college);

@@ -83,14 +83,16 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 			};
 			const newCollegeIndex = colleges.push(newCollege) - 1;
 			geocoder.geocode({'address': currentCollegeName}, function (results, status) {
-				console.log(currentCollegeName);
-				newCollege.location = {
-					"lat": results[0].geometry.location.lat(),
-					"lng": results[0].geometry.location.lng()
-				};
+				try {
+					newCollege.location = {
+						"lat": results[0].geometry.location.lat(),
+						"lng": results[0].geometry.location.lng()
+					};
 
-				colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
-
+					colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
+				}catch(e) {
+					console.log(newCollegeIndex, currentCollegeName, e)
+				}
 				callback(colleges);
 			});
 		}

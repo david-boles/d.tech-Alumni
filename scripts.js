@@ -82,8 +82,8 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 			const newCollegeIndex = colleges.push(newCollege) - 1;
 				
 			newCollege.location = {
-				"lat": row[latColumnIndex],
-				"lng": row[lngColumnIndex]
+				"lat": Number(row[latColumnIndex]),
+				"lng": Number(row[lngColumnIndex])
 			};
 
 			colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});

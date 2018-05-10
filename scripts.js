@@ -9,10 +9,7 @@ function initMap() {
 	});
 
 	getData(function (data) {
-		console.log(data);
 		data.forEach(function (college, i) {
-			console.log(college);
-			console.log(college.location);
 			var marker = new google.maps.Marker({
 				position: college.location,
 				map: map
@@ -64,7 +61,6 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 	spreadsheetArrayData.forEach(function (row, i) {
 		row.shift();
 
-		console.log(row);
 		const currentCollegeName = row[locationColumnIndex];
 
 		var collegeAlreadyAdded = false;
@@ -91,7 +87,7 @@ function interpretCollegeArray(spreadsheetArrayData, callback) {
 
 					colleges[newCollegeIndex].alumni.push({name: row[firstNameColumnIndex] + " " + row[lastNameColumnIndex], year: row[yearColumnIndex], email: row[emailColumnIndex]});
 				}catch(e) {
-					console.log(newCollegeIndex, currentCollegeName, e)
+					console.error(newCollegeIndex, currentCollegeName, e);
 				}
 				callback(colleges);
 			});

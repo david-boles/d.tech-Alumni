@@ -12,7 +12,8 @@ function initMap() {
 		data.forEach(function (college, i) {
 			var marker = new google.maps.Marker({
 				position: college.location,
-				map: map
+				map: map,
+				label: college.alumni.length
 			});
 
 			addInfoWindow(marker, college);

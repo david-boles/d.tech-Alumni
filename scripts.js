@@ -114,7 +114,7 @@ function getData(callback) {
 			}
 		}
 	};
-	xmlHttp.open("GET", "https://docs.google.com/spreadsheets/u/1/d/1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU/export?format=csv&id=1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU&gid=836240143", true); // true for asynchronous
+	xmlHttp.open("GET", "https://docs.google.com/spreadsheets/u/1/d/1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU/export?format=csv&id=1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU&gid=836240143" + '&' + new Date().getTime(), true); // true for asynchronous
 	xmlHttp.send(null);
 }
 

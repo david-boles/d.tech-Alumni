@@ -2,13 +2,17 @@
 
 function initMap() {
 
-	//getData(function(Data){
+	console.log("Google APIs loaded, initializing map...");
+	
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 3,
 		center: {lat: 36.2351866, lng: -95}
 	});
 
+	
+	console.log("Getting data...");
 	getData(function (data) {
+		console.log("Got data!", data);
 		data.forEach(function (college, i) {
 			var marker = new google.maps.Marker({
 				position: college.location,
@@ -102,6 +106,8 @@ function getData(callback) {
 		if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
 			try {
 				var spreadsheetData = parseCSV(xmlHttp.responseText);
+				console.log("Got spreadsheet!", spreadsheetData);
+				
 				var i = 0;
 				interpretCollegeArray(spreadsheetData, function (interpretedColleges) {
 					i++;
@@ -114,6 +120,7 @@ function getData(callback) {
 			}
 		}
 	};
+	console.log("Getting spreadsheet...");
 	xmlHttp.open("GET", "https://docs.google.com/spreadsheets/u/1/d/1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU/export?format=csv&id=1t2ojUXaMfIJX3GTD20y060_Yl7qWdpfK0Gqgz85v4LU&gid=836240143" + '&' + new Date().getTime(), true); // true for asynchronous
 	xmlHttp.send(null);
 }

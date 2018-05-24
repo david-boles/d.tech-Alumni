@@ -12,6 +12,7 @@ function initMap() {
 	
 	console.log("Getting data...");
 	getData(function (data) {
+		data = data.slice();
 		console.log("Got data!", data);
 		console.log("Mapping " + data.length + " places...");
 		data.forEach(function (college, i) {

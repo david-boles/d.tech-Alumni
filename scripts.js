@@ -13,8 +13,9 @@ function initMap() {
 	console.log("Getting data...");
 	getData(function (data) {
 		console.log("Got data!", data);
+		console.log("Mapping " + data.length + " places...");
 		data.forEach(function (college, i) {
-			console.log("Mapping place...", college.name);
+			console.log("Mapping place...", college.name, i);
 			var marker = new google.maps.Marker({
 				position: college.location,
 				map: map,

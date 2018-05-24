@@ -14,11 +14,13 @@ function initMap() {
 	getData(function (data) {
 		console.log("Got data!", data);
 		data.forEach(function (college, i) {
+			Console.log("Mapping place...", college.name);
 			var marker = new google.maps.Marker({
 				position: college.location,
 				map: map,
 				//label: String(college.alumni.length)//Shows the number of alumni in that location
 			});
+			Console.log("Place mapped!");
 
 			addInfoWindow(marker, college);
 		});
@@ -27,6 +29,7 @@ function initMap() {
 
 var infoWindows = [];
 function addInfoWindow(marker, place) {
+	Console.log("Creating info window...");
 	var text = place.name;
 	for (var i in place.alumni) {
 		var alumn = place.alumni[i];
@@ -39,13 +42,16 @@ function addInfoWindow(marker, place) {
 	});
 	
 	infoWindows.push(infoWindow);
+	Console.log("Created info window!");
 
+	Console.log("Adding close event listener...");
 	marker.addListener("click", function () {
 		for(var i in infoWindows) {
 			infoWindows[i].close();
 		}
 		infoWindow.open(map, marker);
 	});
+	Console.log("Added close event listener!");
 }
 
 const firstNameColumnIndex = 1;

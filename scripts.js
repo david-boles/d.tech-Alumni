@@ -20,9 +20,8 @@ function initMap() {
 				map: map,
 				//label: String(college.alumni.length)//Shows the number of alumni in that location
 			});
-			console.log("Place mapped!");
-
 			addInfoWindow(marker, college);
+			console.log("Place mapped!");
 		});
 	});
 }

@@ -65,6 +65,8 @@ const lngColumnIndex = 7;
 
 
 function interpretCollegeArray(spreadsheetArrayData, callback) {
+	
+	console.log("Intepreting college array...");
 
 	var geocoder = new google.maps.Geocoder();
 

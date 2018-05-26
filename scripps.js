@@ -45,8 +45,7 @@ async function init() {
     lng: +a[7],
   }));
   const places = {};
-  // console.log(obj);
-  // Object.keys(obj).forEach((key) => {
+  Object.keys(obj).forEach((key) => {
     const val = obj[key];
     const { lat, lng } = val;
     const stringy = `${lat}, ${lng}`;

@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "R": true,
+    "document": true,
+    "window": true
+  },
+  "rules": {
+    "no-restricted-syntax": 0,
+    "no-underscore-dangle": 0,
+    "no-return-assign": 0,
+    "no-confusing-arrow": 0,
+    "func-names": "off",
+    "no-var": "off",
+    "vars-on-top": "off",
+    "no-unused-vars": "warn",
+    "no-cond-assign": "off",
+    "max-len": "off",
+    "no-unused-expressions": "off",
+    "no-shadow": "warn"
+  }
+}

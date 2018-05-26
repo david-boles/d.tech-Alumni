@@ -25,15 +25,15 @@ async function init() {
       lng: -95,
     },
   });
-  console.log("It's begun");
+  // console.log("It's begun");
   const csvurl = getSpreadSheetURL();
-  console.warn('Fetching the CSV');
-  console.warn('Fetching the college data at the same time');
+  // console.warn('Fetching the CSV');
+  // console.warn('Fetching the college data at the same time');
   const datap = Promise.all([fetch(csvurl).then(v => v.text()), fetch(collegeDataURL).then(v => v.json())]);
   const [plainText, collegeData] = await datap;
   const ary = plainText.split('\n').slice(1).map(v => v.slice(0, -1).split`,`.slice(1));
-  console.warn('Finished parsing the CSV');
-  console.warn('Finished parsing the college data');
+  // console.warn('Finished parsing the CSV');
+  // console.warn('Finished parsing the college data');
   const obj = ary.map(a => ({
     email: a[0],
     firstName: a[1],
@@ -45,8 +45,8 @@ async function init() {
     lng: +a[7],
   }));
   const places = {};
-  console.log(obj);
-  Object.keys(obj).forEach((key) => {
+  // console.log(obj);
+  // Object.keys(obj).forEach((key) => {
     const val = obj[key];
     const { lat, lng } = val;
     const stringy = `${lat}, ${lng}`;

@@ -1,0 +1,28 @@
+{
+  "name": "d.tech-alumni",
+  "version": "1.0.0",
+  "description": "Playing around with displaying info about d.tech alumni.",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nope"
+  },
+  "keywords": [
+    "d.tech"
+  ],
+  "author": "David Boles",
+  "license": "ISC",
+  "bugs": {
+    "url": "nope"
+  },
+  "homepage": "nope",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}

@@ -53,8 +53,7 @@ async function init() {
     if (places[stringy]) {
       places[stringy].push(val);
     } else {
-      places[stringy].alumni = [val];
-      places[stringy].fn = addMarker({ lat, lng });
+      places[stringy] = {alumni: [val], fn: addMarker({ lat, lng })};
     }
   });
   console.log(places);

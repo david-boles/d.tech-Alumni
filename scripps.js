@@ -40,7 +40,7 @@ async function init() {
     firstName: a[2],
     lastName: a[3],
     year: a[4],
-    college: a[5],
+    placeName: a[5],
     personalEmail: a[6],
     lat: +a[7],
     lng: +a[8],
@@ -53,13 +53,13 @@ async function init() {
     if (places[stringy]) {
       places[stringy].alumni.push(val);
     } else {
-      places[stringy] = {alumni: [val], fn: addMarker({ lat, lng })};
+      places[stringy] = {name: val.placeName, alumni: [val], fn: addMarker({ lat, lng })};
     }
   });
   console.log(places);
   Object.keys(places).forEach((place) => {
     const aary = places[place].alumni;
-    const info = `${alumnus.college}<br>`;
+    const info = `${places[place].name}<br>`;
     aary.forEach((alumnus) => {
       info += `- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
     });

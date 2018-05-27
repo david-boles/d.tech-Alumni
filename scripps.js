@@ -36,14 +36,14 @@ async function init() {
   // console.warn('Finished parsing the CSV');
   // console.warn('Finished parsing the college data');
   const obj = ary.map(a => ({
-    email: a[0],
-    firstName: a[1],
-    lastName: a[2],
-    year: a[3],
-    college: a[4],
-    personalEmail: a[5],
-    lat: +a[6],
-    lng: +a[7],
+    email: a[1],
+    firstName: a[2],
+    lastName: a[3],
+    year: a[4],
+    college: a[5],
+    personalEmail: a[6],
+    lat: +a[7],
+    lng: +a[8],
   }));
   const places = {};
   Object.keys(obj).forEach((key) => {

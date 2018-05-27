@@ -51,7 +51,7 @@ async function init() {
     const { lat, lng } = val;
     const stringy = `${lat}, ${lng}`;
     if (places[stringy]) {
-      places[stringy].push(val);
+      places[stringy].alumni.push(val);
     } else {
       places[stringy] = {alumni: [val], fn: addMarker({ lat, lng })};
     }

@@ -48,12 +48,14 @@ async function init() {
   const places = {};
   Object.keys(obj).forEach((key) => {
     const val = obj[key];
-    const { lat, lng } = val;
-    const stringy = `${lat}, ${lng}`;
-    if (places[stringy]) {
-      places[stringy].alumni.push(val);
-    } else {
-      places[stringy] = {name: val.placeName, alumni: [val], fn: addMarker({ lat, lng })};
+    if(val.placeName) {
+      const { lat, lng } = val;
+      const stringy = `${lat}, ${lng}`;
+      if (places[stringy]) {
+        places[stringy].alumni.push(val);
+      } else {
+        places[stringy] = {name: val.placeName, alumni: [val], fn: addMarker({ lat, lng })};
+      }
     }
   });
   console.log(places);

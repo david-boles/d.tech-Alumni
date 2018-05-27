@@ -61,7 +61,7 @@ async function init() {
     const aary = places[place];
     // it's the alumnus array
     aary.forEach((alumnus) => {
-      const info = `${alumnus.college}<br>- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.email ? `(${alumnus.email})` : ''}`;
+      const info = `${alumnus.college}<br>- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
       alumnus.fn(info);
     });
   });

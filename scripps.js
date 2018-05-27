@@ -53,18 +53,18 @@ async function init() {
     if (places[stringy]) {
       places[stringy].push(val);
     } else {
-      places[stringy] = [val];
+      places[stringy].alumni = [val];
+      places[stringy].fn = addMarker({ lat, lng });
     }
-    val.fn = addMarker({ lat, lng });
   });
   console.log(places);
   Object.keys(places).forEach((place) => {
-    const aary = places[place];
-    // it's the alumnus array
+    const aary = places[place].alumni;
+    const info = `${alumnus.college}<br>`;
     aary.forEach((alumnus) => {
-      const info = `${alumnus.college}<br>- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
-      alumnus.fn(info);
+      info += `- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
     });
+    places[place].fn(info);
   });
 }
 

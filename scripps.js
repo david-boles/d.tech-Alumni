@@ -59,9 +59,9 @@ async function init() {
   console.log(places);
   Object.keys(places).forEach((place) => {
     const aary = places[place].alumni;
-    var info = `${places[place].name}<br>`;
+    var info = `${places[place].name}`;
     aary.forEach((alumnus) => {
-      info += `- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
+      info += `<br>- ${alumnus.firstName} ${alumnus.lastName} ${alumnus.personalEmail ? `(${alumnus.personalEmail})` : ''}`;
     });
     places[place].fn(info);
   });

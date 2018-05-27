@@ -29,8 +29,8 @@ async function init() {
   const csvurl = getSpreadSheetURL();
   // console.warn('Fetching the CSV');
   // console.warn('Fetching the college data at the same time');
-  const datap = Promise.all([fetch(csvurl).then(v => v.text()), fetch(collegeDataURL).then(v => v.json())]);
-  const [plainText, collegeData] = await datap;
+  const datap = Promise.all([fetch(csvurl).then(v => v.text())]);
+  const [plainText] = await datap;
   const ary = plainText.split('\n').slice(1).map(v => v.slice(0, -1).split`,`.slice(1));
   // console.warn('Finished parsing the CSV');
   // console.warn('Finished parsing the college data');

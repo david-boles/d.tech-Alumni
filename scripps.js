@@ -32,6 +32,7 @@ async function init() {
   const datap = Promise.all([fetch(csvurl).then(v => v.text())]);
   const [plainText] = await datap;
   const ary = plainText.split('\n').slice(1).map(v => v.slice(0, -1).split`,`.slice(1));
+  console.log(plainText, ary);
   // console.warn('Finished parsing the CSV');
   // console.warn('Finished parsing the college data');
   const obj = ary.map(a => ({

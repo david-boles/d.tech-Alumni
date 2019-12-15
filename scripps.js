@@ -2,7 +2,7 @@
 // I'm really bad aren't I
 const collegeDataURL = 'colleges.json';
 const corsURL = 'https://cors-anywhere.herokuapp.com/';
-const spreadSheetBaseURL = 'https://docs.google.com/spreadsheets/d/13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM/export?format=csv&id=13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM&gid=836240143';
+const spreadSheetBaseURL = 'https://docs.google.com/spreadsheets/d/13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM/export?format=csv&id=13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM&gid=836240143&';
 const getSpreadSheetURL = () => `${corsURL}${spreadSheetBaseURL}${new Date().getTime()}`;
 let currentInfoWindow = null;
 const addMarker = obj => (info) => {

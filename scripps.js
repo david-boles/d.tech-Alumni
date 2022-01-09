@@ -1,9 +1,6 @@
 // ah? ah? get it? because scripps is a college :P
 // I'm really bad aren't I
-const collegeDataURL = 'colleges.json';
-const corsURL = 'https://cors-anywhere.herokuapp.com/';
-const spreadSheetBaseURL = 'https://docs.google.com/spreadsheets/d/13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM/export?format=csv&id=13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM&gid=836240143&';
-const getSpreadSheetURL = () => `${corsURL}${spreadSheetBaseURL}${new Date().getTime()}`;
+const spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM/export?format=csv&id=13Wkdyq70xm4Kkx0MseYj7sr2BJNKJV4AzMoMY1U90XM&gid=836240143';
 let currentInfoWindow = null;
 const addMarker = obj => (info) => {
   const marker = new google.maps.Marker({ position: obj, map: window.map });
@@ -25,16 +22,18 @@ async function init() {
       lng: -95,
     },
   });
-  // console.log("It's begun");
-  const csvurl = getSpreadSheetURL();
-  // console.warn('Fetching the CSV');
-  // console.warn('Fetching the college data at the same time');
-  const datap = Promise.all([fetch(csvurl).then(v => v.text())]);
+  console.log("It's begun");
+  console.log("Fetching spreadsheet...")
+  const datap = Promise.all([fetch(spreadsheetUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "text",
+    },
+  }).then(v => v.text())]);
   const [plainText] = await datap;
+  console.log("Fetched", plainText);
   const ary = parseCSV(plainText);
-  console.log(plainText, ary);
-  // console.warn('Finished parsing the CSV');
-  // console.warn('Finished parsing the college data');
+  console.log("Parsed", ary);
   const obj = ary.map(a => ({
     email: a[1],
     firstName: a[2],
